@@ -313,7 +313,6 @@
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="showPage('about'); closeMenu()">Über Uns</a></li>
-    <li><a href="#" onclick="showPage('songs'); closeMenu()">Unsere Songs</a></li>
     <li><a href="#" onclick="showPage('media'); closeMenu()">Media</a></li>
     <li><a href="#" onclick="showPage('termine'); closeMenu()">Termine</a></li>
     <li><a href="#" onclick="showPage('kontakt'); closeMenu()">Kontakt</a></li>
@@ -420,8 +419,29 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- UNSERE SONGS / REPERTOIRE -->
+  <div style="background:var(--black2); border-top:1px solid #1e1e1e; border-bottom:1px solid #1e1e1e; padding:3rem;">
+    <div class="section-label">Unsere Songs</div>
+    <p style="color:var(--muted); font-size:0.95rem; max-width:760px; margin-bottom:2rem; line-height:1.75;">Unser Programm besteht aus ausgewählten Classic Rock-, Country Rock- und Rock'n'Roll-Songs, die seit Jahrzehnten den Sound der Rockmusik prägen. Darüber hinaus interpretieren wir auch bekannte Songs außerhalb des Genres als Rock-Versionen.</p>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.5rem;">
+      <div class="repertoire-row"><span class="rep-title">Summer of '69</span><span class="rep-artist">Bryan Adams</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sweet Home Alabama</span><span class="rep-artist">Lynyrd Skynyrd</span></div>
+      <div class="repertoire-row"><span class="rep-title">Hold the Line</span><span class="rep-artist">Toto</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sharp Dressed Man</span><span class="rep-artist">ZZ Top</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sultans of Swing</span><span class="rep-artist">Dire Straits</span></div>
+      <div class="repertoire-row"><span class="rep-title">Johnny B. Goode</span><span class="rep-artist">Chuck Berry</span></div>
+      <div class="repertoire-row"><span class="rep-title">Bad Moon Rising</span><span class="rep-artist">CCR</span></div>
+      <div class="repertoire-row"><span class="rep-title">Ring of Fire</span><span class="rep-artist">Johnny Cash</span></div>
+      <div class="repertoire-row"><span class="rep-title">Jailhouse Rock</span><span class="rep-artist">Elvis Presley</span></div>
+      <div class="repertoire-row"><span class="rep-title">Another Brick in the Wall</span><span class="rep-artist">Pink Floyd</span></div>
+    </div>
+  </div>
+
+  <div class="page-content">
     <!-- FÜR WEN WIR SPIELEN -->
-    <div style="margin-top:4rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+    <div style="margin-top:0; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
       <div>
         <div class="section-label">Für wen wir spielen</div>
         <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.95rem;">Wir fühlen uns zuhause auf:</p>
@@ -451,64 +471,6 @@
     <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.5rem); letter-spacing:0.08em; color:var(--muted);">It is only Rock'n'Roll.</p>
   </div>
 
-  <footer>
-    <span>info@allmyexs.de · © 2026</span>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/allmyexs_texas/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank">YouTube</a>
-    </div>
-  </footer>
-</div>
-
-<!-- ============ UNSERE SONGS ============ -->
-<div class="page" id="page-songs">
-  <div class="page-hero">
-    <h1 class="page-headline">Unsere Songs</h1>
-  </div>
-  <div class="page-content">
-    <p class="songs-intro">
-      Unser Programm besteht aus ausgewählten Classic Rock-, Country Rock- und Rock'n'Roll-Songs, die seit Jahrzehnten den Sound der Rockmusik prägen. Darüber hinaus interpretieren wir auch bekannte Songs außerhalb des Genres als Rock-Versionen.
-    </p>
-
-    <div class="repertoire-section-title">Classic Rock</div>
-    <div class="repertoire-full-grid">
-      <div class="repertoire-row"><span class="rep-title">Sharp Dressed Man</span><span class="rep-artist">ZZ Top</span></div>
-      <div class="repertoire-row"><span class="rep-title">Gimme All Your Lovin'</span><span class="rep-artist">ZZ Top</span></div>
-      <div class="repertoire-row"><span class="rep-title">Legs</span><span class="rep-artist">ZZ Top</span></div>
-      <div class="repertoire-row"><span class="rep-title">La Grange</span><span class="rep-artist">ZZ Top</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sweet Home Alabama</span><span class="rep-artist">Lynyrd Skynyrd</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sultans of Swing</span><span class="rep-artist">Dire Straits</span></div>
-      <div class="repertoire-row"><span class="rep-title">Money for Nothing</span><span class="rep-artist">Dire Straits</span></div>
-      <div class="repertoire-row"><span class="rep-title">Another Brick in the Wall</span><span class="rep-artist">Pink Floyd</span></div>
-      <div class="repertoire-row"><span class="rep-title">Wish You Were Here</span><span class="rep-artist">Pink Floyd</span></div>
-      <div class="repertoire-row"><span class="rep-title">Summer of '69</span><span class="rep-artist">Bryan Adams</span></div>
-      <div class="repertoire-row"><span class="rep-title">Hold the Line</span><span class="rep-artist">Toto</span></div>
-      <div class="repertoire-row"><span class="rep-title">Africa</span><span class="rep-artist">Toto</span></div>
-      <div class="repertoire-row"><span class="rep-title">Fortunate Son</span><span class="rep-artist">CCR</span></div>
-      <div class="repertoire-row"><span class="rep-title">Bad Moon Rising</span><span class="rep-artist">CCR</span></div>
-      <div class="repertoire-row"><span class="rep-title">Have You Ever Seen the Rain</span><span class="rep-artist">CCR</span></div>
-    </div>
-
-    <div class="repertoire-section-title">Country Rock & Rock'n'Roll</div>
-    <div class="repertoire-full-grid">
-      <div class="repertoire-row"><span class="rep-title">Ring of Fire</span><span class="rep-artist">Johnny Cash</span></div>
-      <div class="repertoire-row"><span class="rep-title">Folsom Prison Blues</span><span class="rep-artist">Johnny Cash</span></div>
-      <div class="repertoire-row"><span class="rep-title">Walk the Line</span><span class="rep-artist">Johnny Cash</span></div>
-      <div class="repertoire-row"><span class="rep-title">Jailhouse Rock</span><span class="rep-artist">Elvis Presley</span></div>
-      <div class="repertoire-row"><span class="rep-title">Johnny B. Goode</span><span class="rep-artist">Chuck Berry</span></div>
-      <div class="repertoire-row"><span class="rep-title">Old Time Rock'n'Roll</span><span class="rep-artist">Bob Seger</span></div>
-      <div class="repertoire-row"><span class="rep-title">All My Ex's Live in Texas</span><span class="rep-artist">George Strait</span></div>
-      <div class="repertoire-row"><span class="rep-title">Take Me Home, Country Roads</span><span class="rep-artist">John Denver</span></div>
-      <div class="repertoire-row"><span class="rep-title">Country Roads</span><span class="rep-artist">Herms Niel</span></div>
-    </div>
-
-    <div class="repertoire-section-title">Rock-Versionen</div>
-    <div class="repertoire-full-grid">
-      <div class="repertoire-row"><span class="rep-title">Rock me Amadeus</span><span class="rep-artist">Falco</span></div>
-      <div class="repertoire-row"><span class="rep-title">Thunderstruck</span><span class="rep-artist">AC/DC</span></div>
-      <div class="repertoire-row"><span class="rep-title">Highway to Hell</span><span class="rep-artist">AC/DC</span></div>
-    </div>
-  </div>
   <footer>
     <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
@@ -611,11 +573,6 @@
         <div class="gig-item upcoming">
           <div class="gig-date">09.08.2026</div>
           <div class="gig-name">Missiocamp Strobelmühle <span style="color:var(--muted); font-size:0.85rem;">– 22:00 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
-        </div>
-        <div class="gig-item upcoming">
-          <div class="gig-date">29.08.2026</div>
-          <div class="gig-name">Sportfest LSV – Sportplatz <span style="color:var(--muted); font-size:0.85rem;">– 21:00 Uhr</span></div>
           <div class="gig-badge">Demnächst</div>
         </div>
         <div class="gig-item upcoming">
