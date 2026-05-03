@@ -22,7 +22,6 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--black);
     color: var(--white);
@@ -41,40 +40,19 @@
     padding: 0 3rem;
     height: 74px;
   }
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-  .nav-logo img {
-    height: 58px;
-    width: auto;
-    display: block;
-   
-  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 58px; width: auto; display: block; }
   .nav-logo-text {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.55rem;
-    letter-spacing: 0.06em;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-left: 0.85rem;
+    font-weight: 700; font-size: 1.55rem; letter-spacing: 0.06em;
+    color: #ffffff; text-transform: uppercase; margin-left: 0.85rem;
   }
-  .nav-logo-text em {
-    font-style: normal;
-    color: #ffffff;
-  }
+  .nav-logo-text em { font-style: normal; color: #ffffff; }
   .nav-logo span { color: #ffffff; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: color 0.2s;
+    color: var(--muted); text-decoration: none; font-size: 0.75rem;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
@@ -87,120 +65,80 @@
   .page { display: none; padding-top: 74px; min-height: 100vh; }
   .page.active { display: block; }
 
-  /* =============== HOME PAGE =============== */
-  .hero {
-    min-height: calc(100vh - 74px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 5rem 3rem 3rem;
-    gap: 3rem;
+  /* =============== HOME – FULLSCREEN HERO =============== */
+  .hero-fullscreen {
     position: relative;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(200,56,42,0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--red);
-    color: var(--white);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.4rem 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 10vw, 9rem);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 1.5rem;
-  }
-  .hero-tagline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: var(--red);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  .hero-subtitle {
-    color: var(--muted);
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
-  }
-  .hero-btn {
-    display: inline-block;
-    margin-top: 2rem;
-    background: var(--red);
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    transition: background 0.2s;
-    cursor: pointer;
-    border: none;
-  }
-  .hero-btn:hover { background: var(--red-hover); }
-
-  .hero-image-box {
-    background: var(--black3);
-    border: 1px solid #222;
-    aspect-ratio: 16/9;
+    height: calc(100vh - 74px);
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #444;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
     overflow: hidden;
   }
-  .hero-image-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  /* BAND STRIP */
-  .band-strip {
-    border-top: 1px solid #1e1e1e;
-    padding: 2.5rem 3rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-  }
-  .band-card {
+  .hero-bg {
+    position: absolute; inset: 0;
     background: var(--black3);
-    border: 1px solid #222;
-    padding: 1.2rem 1rem;
+    background-image: url('assets/band_photo1.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: brightness(0.38);
+    transition: opacity 0.3s;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.7) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
     text-align: center;
-    transition: border-color 0.2s;
+    padding: 2rem 1.5rem;
+    max-width: 900px;
   }
-  .band-card:hover { border-color: var(--red); }
-  .band-card-name {
+  .hero-tag-top {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; padding: 0.4rem 1rem; margin-bottom: 1.8rem;
+  }
+  .hero-genre-line {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.2rem;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.8rem;
   }
-  .band-card-role { color: var(--muted); font-size: 0.8rem; }
+  .hero-main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5.5rem, 14vw, 11rem);
+    line-height: 0.88; letter-spacing: 0.03em;
+    color: var(--white); margin-bottom: 1.2rem;
+  }
+  .hero-main-title span { display: block; }
+  .hero-tagline-main {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--light); margin-bottom: 0.5rem; opacity: 0.85;
+  }
+  .hero-artists {
+    font-size: 0.85rem; color: var(--muted);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .hero-btn {
+    display: inline-block;
+    background: var(--red); color: var(--white); text-decoration: none;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; padding: 1rem 2.5rem;
+    transition: background 0.2s; cursor: pointer; border: none;
+  }
+  .hero-btn:hover { background: var(--red-hover); }
 
   /* FOOTER */
   footer {
-    border-top: 1px solid #1e1e1e;
-    padding: 1.5rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: 0.8rem;
+    border-top: 1px solid #1e1e1e; padding: 1.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--muted); font-size: 0.8rem;
   }
   footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--white); }
@@ -208,288 +146,150 @@
 
   /* =============== INNER PAGES =============== */
   .page-hero {
-    background: var(--black2);
-    border-bottom: 1px solid #1e1e1e;
+    background: var(--black2); border-bottom: 1px solid #1e1e1e;
     padding: 4rem 3rem 3rem;
   }
   .page-tag {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 1rem;
-    display: block;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 1rem; display: block;
   }
   .page-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
+    font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.95; letter-spacing: 0.02em;
   }
   .page-content { padding: 3rem; }
 
   /* ÜBER UNS */
   .about-intro {
-    font-size: 1.15rem;
-    line-height: 1.75;
-    color: var(--light);
-    max-width: 820px;
-    margin-bottom: 3rem;
-    border-left: 3px solid var(--red);
-    padding-left: 1.5rem;
+    font-size: 1.15rem; line-height: 1.75; color: var(--light);
+    max-width: 820px; margin-bottom: 3rem;
+    border-left: 3px solid var(--red); padding-left: 1.5rem;
   }
   .band-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem; margin-top: 2rem;
   }
   .member-card {
-    background: var(--black3);
-    border: 1px solid #222;
-    overflow: hidden;
-    transition: border-color 0.2s, transform 0.2s;
+    background: var(--black3); border: 1px solid #222;
+    overflow: hidden; transition: border-color 0.2s, transform 0.2s;
   }
   .member-card:hover { border-color: var(--red); transform: translateY(-3px); }
   .member-photo {
-    width: 100%;
-    aspect-ratio: 1;
-    background: var(--gray);
+    width: 100%; aspect-ratio: 1; background: var(--gray);
     display: flex; align-items: center; justify-content: center;
-    font-size: 2.5rem;
-    color: #444;
-    overflow: hidden;
+    font-size: 2.5rem; color: #444; overflow: hidden;
   }
   .member-photo img { width: 100%; height: 100%; object-fit: cover; }
   .member-info { padding: 1rem; }
   .member-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 1rem; margin-bottom: 0.2rem;
   }
   .member-role { color: var(--muted); font-size: 0.8rem; }
 
-  /* MEDIA */
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+  /* UNSERE SONGS / REPERTOIRE PAGE */
+  .songs-intro {
+    font-size: 1rem; line-height: 1.75; color: var(--muted);
+    max-width: 760px; margin-bottom: 2.5rem;
   }
-  .video-embed {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #000;
-  }
-  .video-embed iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  .video-card {
-    background: var(--black3);
-    border: 1px solid #222;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-  .video-card:hover { border-color: var(--red); }
-  .video-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--gray);
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-  .video-thumb img { width: 100%; height: 100%; object-fit: cover; }
-  .play-btn {
-    position: absolute;
-    width: 54px; height: 54px;
-    background: var(--red);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.2s, background 0.2s;
-  }
-  .video-thumb:hover .play-btn { transform: scale(1.1); background: var(--red-hover); }
-  .play-btn svg { width: 20px; height: 20px; fill: white; margin-left: 3px; }
-  .video-info { padding: 1rem 1.2rem; }
-  .video-title {
+  .repertoire-section-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.2rem;
+    font-weight: 700; font-size: 1.15rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 1rem; margin-top: 2.5rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid #222;
   }
+  .repertoire-full-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.4rem;
+  }
+  .repertoire-row {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid #1e1e1e;
+    background: var(--black3);
+  }
+  .rep-title {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 1.05rem; letter-spacing: 0.02em; flex: 1;
+  }
+  .rep-artist { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; }
+
+  /* MEDIA */
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .video-embed { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; }
+  .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+  .video-card { background: var(--black3); border: 1px solid #222; overflow: hidden; transition: border-color 0.2s; }
+  .video-card:hover { border-color: var(--red); }
+  .video-info { padding: 1rem 1.2rem; }
+  .video-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
   .video-meta { font-size: 0.8rem; color: var(--muted); }
 
   /* TERMINE */
   .termine-section { margin-bottom: 3rem; }
   .section-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 1.5rem;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 1.5rem;
     display: flex; align-items: center; gap: 1rem;
   }
   .section-label::after { content: ''; flex: 1; height: 1px; background: #222; }
   .gig-list { display: flex; flex-direction: column; gap: 0.75rem; }
   .gig-item {
-    display: grid;
-    grid-template-columns: 130px 1fr auto;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1rem 1.2rem;
-    background: var(--black3);
-    border: 1px solid #222;
-    transition: border-color 0.2s;
+    display: grid; grid-template-columns: 130px 1fr auto;
+    align-items: center; gap: 1.5rem; padding: 1rem 1.2rem;
+    background: var(--black3); border: 1px solid #222; transition: border-color 0.2s;
   }
   .gig-item:hover { border-color: #333; }
   .gig-item.upcoming { border-left: 3px solid var(--red); background: rgba(200,56,42,0.06); }
-  .gig-date {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--red);
-    letter-spacing: 0.03em;
-  }
+  .gig-date { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--red); letter-spacing: 0.03em; }
   .gig-item.past .gig-date { color: var(--muted); }
   .gig-name { font-size: 0.95rem; }
-  .gig-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.6rem;
-    background: var(--red);
-    color: white;
-    white-space: nowrap;
-  }
+  .gig-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.6rem; background: var(--red); color: white; white-space: nowrap; }
 
   /* KONTAKT */
-  .kontakt-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
+  .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
   .kontakt-form { display: flex; flex-direction: column; gap: 1rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
   .form-input, .form-textarea {
-    background: var(--black3);
-    border: 1px solid #333;
-    color: var(--white);
-    padding: 0.75rem 1rem;
-    font-family: 'Barlow', sans-serif;
-    font-size: 0.95rem;
-    transition: border-color 0.2s;
-    outline: none;
-    width: 100%;
+    background: var(--black3); border: 1px solid #333; color: var(--white);
+    padding: 0.75rem 1rem; font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+    transition: border-color 0.2s; outline: none; width: 100%;
   }
   .form-input:focus, .form-textarea:focus { border-color: var(--red); }
   .form-textarea { min-height: 140px; resize: vertical; }
   .submit-btn {
-    display: inline-block;
-    background: var(--red);
-    color: var(--white);
-    border: none;
-    font-family: 'Barlow', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    align-self: flex-start;
+    display: inline-block; background: var(--red); color: var(--white); border: none;
+    font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; padding: 1rem 2rem;
+    cursor: pointer; transition: background 0.2s; align-self: flex-start;
   }
   .submit-btn:hover { background: var(--red-hover); }
-  .kontakt-info h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.04em;
-  }
-  .info-item {
-    display: flex; gap: 1rem;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-  }
+  .kontakt-info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 1.5rem; letter-spacing: 0.04em; }
+  .info-item { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
   .info-icon { color: var(--red); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
   .info-text { font-size: 0.9rem; color: var(--light); }
   .download-section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #222; }
   .download-section h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
   .download-links { display: flex; gap: 1rem; flex-wrap: wrap; }
   .download-link {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    border: 1px solid #333;
-    color: var(--light);
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 0.6rem 1rem;
-    transition: border-color 0.2s, color 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid #333;
+    color: var(--light); text-decoration: none; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.05em; padding: 0.6rem 1rem; transition: border-color 0.2s, color 0.2s;
   }
   .download-link:hover { border-color: var(--red); color: var(--white); }
 
+  .venue-row { display: flex; align-items: center; gap: 0.75rem; color: var(--light); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.03em; font-size: 1.1rem; }
+  .venue-dot { width: 6px; height: 6px; background: var(--red); flex-shrink: 0; display: inline-block; }
+
   /* Mobile */
-  .repertoire-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    border: 1px solid #222;
-    background: var(--black3);
-    transition: border-color 0.2s;
-  }
-  .repertoire-row:hover { border-color: #333; }
-  .rep-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
-    flex: 1;
-  }
-  .rep-artist {
-    font-size: 0.78rem;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
-  .venue-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1rem;
-    color: var(--light);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    font-size: 1.1rem;
-  }
-  .venue-dot {
-    width: 6px; height: 6px;
-    background: var(--red);
-    flex-shrink: 0;
-    display: inline-block;
-  }
   @media (max-width: 768px) {
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; flex-direction: column; position: fixed; top: 74px; left: 0; right: 0; background: var(--black); padding: 1.5rem; gap: 1.2rem; border-bottom: 1px solid #222; }
     .nav-links.open { display: flex; }
     .hamburger { display: flex; }
-    .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem 1.5rem; }
-    .hero-image-box { display: none; }
-    .band-strip { grid-template-columns: repeat(2, 1fr); padding: 1.5rem; }
-    .band-strip .band-card:last-child { grid-column: 1 / -1; }
+    .hero-fullscreen { height: calc(100svh - 74px); }
+    .hero-main-title { font-size: clamp(4rem, 18vw, 7rem); }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
     .page-hero { padding: 2.5rem 1.5rem 2rem; }
     .page-content { padding: 2rem 1.5rem; }
@@ -508,13 +308,12 @@
 
 <nav>
   <a href="#" class="nav-logo" onclick="showPage('home')">
-    <img src="assets/new 3.png" 
-         alt="All My Ex's Live In Texas"
-         onerror="this.style.display='none'" crossorigin="anonymous">
+    <img src="assets/new 3.png" alt="All My Ex's Live In Texas" onerror="this.style.display='none'">
     <span class="nav-logo-text">ALL MY <em>EX'S</em> LIVE IN TEXAS</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="showPage('about'); closeMenu()">Über Uns</a></li>
+    <li><a href="#" onclick="showPage('songs'); closeMenu()">Unsere Songs</a></li>
     <li><a href="#" onclick="showPage('media'); closeMenu()">Media</a></li>
     <li><a href="#" onclick="showPage('termine'); closeMenu()">Termine</a></li>
     <li><a href="#" onclick="showPage('kontakt'); closeMenu()">Kontakt</a></li>
@@ -526,24 +325,23 @@
 
 <!-- ============ HOME ============ -->
 <div class="page active" id="page-home">
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-tag">Coverband · Erzgebirge</div>
-      <h1 class="hero-title">ALL<br>ABOUT<br>ROCK.</h1>
-      <p class="hero-tagline">Von Classic bis Country</p>
-      <p class="hero-subtitle">ZZ Top · Skynyrd · Pink Floyd</p>
-      <p class="hero-subtitle">Seit 2018 auf den Bühnen</p>
+  <section class="hero-fullscreen">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag-top">Classic Rock · Country Rock</div>
+      <h1 class="hero-main-title">
+        <span>ROCK.</span>
+        <span>LIVE.</span>
+        <span>CLASSICS.</span>
+      </h1>
+      <p class="hero-tagline-main">Legendäre Songs. Back on stage.</p>
+      <p class="hero-artists">ZZ Top &nbsp;·&nbsp; CCR &nbsp;·&nbsp; Johnny Cash &nbsp;·&nbsp; Elvis Presley</p>
       <a class="hero-btn" href="#" onclick="showPage('kontakt')">Jetzt Buchen</a>
     </div>
-    <div class="hero-image-box">
-      <img src="assets/Bild_Startseite.jpg" 
-           alt="All My Ex's Live in Texas – Bandfoto"
-           onerror="this.parentElement.innerHTML='[ Bandfoto ]'">
-    </div>
   </section>
-
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/allmyexs_texas/" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank">YouTube</a>
@@ -556,7 +354,6 @@
 <!-- ============ ÜBER UNS ============ -->
 <div class="page" id="page-about">
   <div class="page-hero">
-    <span class="page-tag">Die Band</span>
     <h1 class="page-headline">Über Uns</h1>
   </div>
   <div class="page-content">
@@ -564,7 +361,7 @@
       Wenn die Bühne zum Highway wird und die Verstärker heißlaufen, beginnt eine Reise durch die goldenen Zeiten von Rock, Rock'n'Roll und Country. „All My Ex's Live In Texas" lassen mit ihrem einzigartigen Sound den unvergesslichen Spirit dieser Ära lebendig werden. Authentisch und rau wie ihre Heimat covern die sechs Erzgebirger mit echter Handarbeit und Leidenschaft weltbekannte Klassiker legendärer Bands. Von den donnernden Riffs von ZZ Top über die rauchigen Grooves bei Lynyrd Skynyrd bis zu den sphärischen Klängen von Pink Floyd ist für jeden etwas dabei, der gute Musik liebt – ein Erlebnis, das nach Freiheit, Bier und endlosen Roadtrips schmeckt.
     </p>
 
-    <div class="section-label">Die Mitglieder</div>
+    <div class="section-label">Die Band</div>
 
     <div class="band-grid">
       <div class="member-card">
@@ -622,58 +419,98 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- REPERTOIRE -->
-  <div style="background:var(--black2); border-top:1px solid #1e1e1e; border-bottom:1px solid #1e1e1e; padding:3rem;">
-    <div class="section-label">Auszug aus unserem Repertoire</div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.5rem;">
-      <div class="repertoire-row"><span class="rep-title">Summer of '69</span><span class="rep-artist">Bryan Adams</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sweet Home Alabama</span><span class="rep-artist">Lynyrd Skynyrd</span></div>
-      <div class="repertoire-row"><span class="rep-title">Hold the Line</span><span class="rep-artist">Toto</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sharp Dressed Man</span><span class="rep-artist">ZZ Top</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sultans of Swing</span><span class="rep-artist">Dire Straits</span></div>
-      <div class="repertoire-row"><span class="rep-title">Johnny B. Goode</span><span class="rep-artist">Chuck Berry</span></div>
-      <div class="repertoire-row"><span class="rep-title">Bad Moon Rising</span><span class="rep-artist">CCR</span></div>
-      <div class="repertoire-row"><span class="rep-title">Ring of Fire</span><span class="rep-artist">Johnny Cash</span></div>
-      <div class="repertoire-row"><span class="rep-title">Jailhouse Rock</span><span class="rep-artist">Elvis Presley</span></div>
-      <div class="repertoire-row"><span class="rep-title">Another Brick in the Wall</span><span class="rep-artist">Pink Floyd</span></div>
-    </div>
-  </div>
-
-  <!-- FÜR WEN WIR SPIELEN -->
-  <div style="padding:3rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
-    <div>
-      <div class="section-label">Für wen wir spielen</div>
-      <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.95rem;">Wir fühlen uns zuhause auf:</p>
-      <div style="display:flex; flex-direction:column; gap:0.65rem;">
-        <div class="venue-row"><span class="venue-dot"></span>Stadtfesten &amp; Dorffesten</div>
-        <div class="venue-row"><span class="venue-dot"></span>Clubbühnen &amp; Live-Locations</div>
-        <div class="venue-row"><span class="venue-dot"></span>Firmenfeiern &amp; Events</div>
-        <div class="venue-row"><span class="venue-dot"></span>Open-Air-Veranstaltungen</div>
-        <div class="venue-row" style="margin-top:0.5rem; font-style:italic; color:var(--muted); font-size:0.9rem; padding-left:1.3rem;">Überall dort, wo Live-Musik im Mittelpunkt steht.</div>
+    <!-- FÜR WEN WIR SPIELEN -->
+    <div style="margin-top:4rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+      <div>
+        <div class="section-label">Für wen wir spielen</div>
+        <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.95rem;">Wir fühlen uns zuhause auf:</p>
+        <div style="display:flex; flex-direction:column; gap:0.65rem;">
+          <div class="venue-row"><span class="venue-dot"></span>Stadtfesten &amp; Dorffesten</div>
+          <div class="venue-row"><span class="venue-dot"></span>Clubbühnen &amp; Live-Locations</div>
+          <div class="venue-row"><span class="venue-dot"></span>Firmenfeiern &amp; Events</div>
+          <div class="venue-row"><span class="venue-dot"></span>Open-Air-Veranstaltungen</div>
+          <div class="venue-row" style="margin-top:0.5rem; font-style:italic; color:var(--muted); font-size:0.9rem; padding-left:1.3rem;">Überall dort, wo Live-Musik im Mittelpunkt steht.</div>
+        </div>
+        <a class="hero-btn" href="#" onclick="showPage('kontakt')" style="margin-top:2rem; display:inline-block;">Jetzt anfragen</a>
       </div>
-      <a class="hero-btn" href="#" onclick="showPage('kontakt')" style="margin-top:2rem; display:inline-block;">Jetzt anfragen</a>
-    </div>
-    <div style="border:1px solid #222; background:var(--black3); padding:2.5rem; display:flex; align-items:center; justify-content:center;">
-      <div style="text-align:center;">
-        <div style="font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--red); line-height:1; margin-bottom:0.5rem;">2018</div>
-        <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Gegründet</div>
-        <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">6</div>
-        <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Bandmitglieder</div>
-        <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">3</div>
-        <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Genres</div>
+      <div style="border:1px solid #222; background:var(--black3); padding:2.5rem; display:flex; align-items:center; justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--red); line-height:1; margin-bottom:0.5rem;">2018</div>
+          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Gegründet</div>
+          <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">6</div>
+          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Bandmitglieder</div>
+          <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">3</div>
+          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Genres</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- SLOGAN -->
   <div style="border-top:1px solid #1e1e1e; padding:3rem; text-align:center; background:var(--black2);">
     <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.5rem); letter-spacing:0.08em; color:var(--muted);">It is only Rock'n'Roll.</p>
   </div>
 
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/allmyexs_texas/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank">YouTube</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ UNSERE SONGS ============ -->
+<div class="page" id="page-songs">
+  <div class="page-hero">
+    <h1 class="page-headline">Unsere Songs</h1>
+  </div>
+  <div class="page-content">
+    <p class="songs-intro">
+      Unser Programm besteht aus ausgewählten Classic Rock-, Country Rock- und Rock'n'Roll-Songs, die seit Jahrzehnten den Sound der Rockmusik prägen. Darüber hinaus interpretieren wir auch bekannte Songs außerhalb des Genres als Rock-Versionen.
+    </p>
+
+    <div class="repertoire-section-title">Classic Rock</div>
+    <div class="repertoire-full-grid">
+      <div class="repertoire-row"><span class="rep-title">Sharp Dressed Man</span><span class="rep-artist">ZZ Top</span></div>
+      <div class="repertoire-row"><span class="rep-title">Gimme All Your Lovin'</span><span class="rep-artist">ZZ Top</span></div>
+      <div class="repertoire-row"><span class="rep-title">Legs</span><span class="rep-artist">ZZ Top</span></div>
+      <div class="repertoire-row"><span class="rep-title">La Grange</span><span class="rep-artist">ZZ Top</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sweet Home Alabama</span><span class="rep-artist">Lynyrd Skynyrd</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sultans of Swing</span><span class="rep-artist">Dire Straits</span></div>
+      <div class="repertoire-row"><span class="rep-title">Money for Nothing</span><span class="rep-artist">Dire Straits</span></div>
+      <div class="repertoire-row"><span class="rep-title">Another Brick in the Wall</span><span class="rep-artist">Pink Floyd</span></div>
+      <div class="repertoire-row"><span class="rep-title">Wish You Were Here</span><span class="rep-artist">Pink Floyd</span></div>
+      <div class="repertoire-row"><span class="rep-title">Summer of '69</span><span class="rep-artist">Bryan Adams</span></div>
+      <div class="repertoire-row"><span class="rep-title">Hold the Line</span><span class="rep-artist">Toto</span></div>
+      <div class="repertoire-row"><span class="rep-title">Africa</span><span class="rep-artist">Toto</span></div>
+      <div class="repertoire-row"><span class="rep-title">Fortunate Son</span><span class="rep-artist">CCR</span></div>
+      <div class="repertoire-row"><span class="rep-title">Bad Moon Rising</span><span class="rep-artist">CCR</span></div>
+      <div class="repertoire-row"><span class="rep-title">Have You Ever Seen the Rain</span><span class="rep-artist">CCR</span></div>
+    </div>
+
+    <div class="repertoire-section-title">Country Rock & Rock'n'Roll</div>
+    <div class="repertoire-full-grid">
+      <div class="repertoire-row"><span class="rep-title">Ring of Fire</span><span class="rep-artist">Johnny Cash</span></div>
+      <div class="repertoire-row"><span class="rep-title">Folsom Prison Blues</span><span class="rep-artist">Johnny Cash</span></div>
+      <div class="repertoire-row"><span class="rep-title">Walk the Line</span><span class="rep-artist">Johnny Cash</span></div>
+      <div class="repertoire-row"><span class="rep-title">Jailhouse Rock</span><span class="rep-artist">Elvis Presley</span></div>
+      <div class="repertoire-row"><span class="rep-title">Johnny B. Goode</span><span class="rep-artist">Chuck Berry</span></div>
+      <div class="repertoire-row"><span class="rep-title">Old Time Rock'n'Roll</span><span class="rep-artist">Bob Seger</span></div>
+      <div class="repertoire-row"><span class="rep-title">All My Ex's Live in Texas</span><span class="rep-artist">George Strait</span></div>
+      <div class="repertoire-row"><span class="rep-title">Take Me Home, Country Roads</span><span class="rep-artist">John Denver</span></div>
+      <div class="repertoire-row"><span class="rep-title">Country Roads</span><span class="rep-artist">Herms Niel</span></div>
+    </div>
+
+    <div class="repertoire-section-title">Rock-Versionen</div>
+    <div class="repertoire-full-grid">
+      <div class="repertoire-row"><span class="rep-title">Rock me Amadeus</span><span class="rep-artist">Falco</span></div>
+      <div class="repertoire-row"><span class="rep-title">Thunderstruck</span><span class="rep-artist">AC/DC</span></div>
+      <div class="repertoire-row"><span class="rep-title">Highway to Hell</span><span class="rep-artist">AC/DC</span></div>
+    </div>
+  </div>
+  <footer>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/allmyexs_texas/" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank">YouTube</a>
@@ -690,7 +527,6 @@
   <div class="page-content">
     <div class="section-label">Live Videos</div>
     <div class="video-grid">
-
       <div class="video-card">
         <div class="video-embed">
           <iframe src="https://www.youtube-nocookie.com/embed/xhKUdtjgUO4?rel=0&modestbranding=1" title="Summer of '69" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -700,7 +536,6 @@
           <div class="video-meta">Bryan Adams Cover</div>
         </div>
       </div>
-
       <div class="video-card">
         <div class="video-embed">
           <iframe src="https://www.youtube-nocookie.com/embed/yWOfnkTrjZo?rel=0&modestbranding=1" title="Old Time Rock'n'Roll" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -710,7 +545,6 @@
           <div class="video-meta">Bob Seger Cover</div>
         </div>
       </div>
-
       <div class="video-card">
         <div class="video-embed">
           <iframe src="https://www.youtube-nocookie.com/embed/yfIhtjP5X3s?rel=0&modestbranding=1" title="Ring of Fire" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -720,7 +554,6 @@
           <div class="video-meta">Johnny Cash Cover</div>
         </div>
       </div>
-
       <div class="video-card">
         <div class="video-embed">
           <iframe src="https://www.youtube-nocookie.com/embed/ymMouoTmTpc?rel=0&modestbranding=1" title="Rock me Amadeus" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -730,7 +563,6 @@
           <div class="video-meta">Falco Cover</div>
         </div>
       </div>
-
     </div>
 
     <div style="margin-top:3rem">
@@ -752,7 +584,7 @@
     </div>
   </div>
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/allmyexs_texas/" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank">YouTube</a>
@@ -772,23 +604,51 @@
       <div class="section-label">Kommende Auftritte</div>
       <div class="gig-list">
         <div class="gig-item upcoming">
-          <div class="gig-date">05.12.2025</div>
-          <div class="gig-name">Upgrade JuGo Lutherkirche Chemnitz <span style="color:var(--muted); font-size:0.85rem;">– 19:30 Uhr</span></div>
-          <div class="gig-badge">Bald</div>
+          <div class="gig-date">19.06.2026</div>
+          <div class="gig-name">Familienfest Königsbruck <span style="color:var(--muted); font-size:0.85rem;">– 20:00 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
+        </div>
+        <div class="gig-item upcoming">
+          <div class="gig-date">09.08.2026</div>
+          <div class="gig-name">Missiocamp Strobelmühle <span style="color:var(--muted); font-size:0.85rem;">– 22:00 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
+        </div>
+        <div class="gig-item upcoming">
+          <div class="gig-date">29.08.2026</div>
+          <div class="gig-name">Sportfest LSV – Sportplatz <span style="color:var(--muted); font-size:0.85rem;">– 21:00 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
+        </div>
+        <div class="gig-item upcoming">
+          <div class="gig-date">04.09.2026</div>
+          <div class="gig-name">Heimatfest Schmorkau – Festplatz <span style="color:var(--muted); font-size:0.85rem;">– 21:00 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
+        </div>
+        <div class="gig-item upcoming">
+          <div class="gig-date">11.09.2026</div>
+          <div class="gig-name">Gartenverein Leipzig – Open Air <span style="color:var(--muted); font-size:0.85rem;">– 21:00 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
+        </div>
+        <div class="gig-item upcoming">
+          <div class="gig-date">18.10.2026</div>
+          <div class="gig-name">Tag des Handwerks Eppendorf <span style="color:var(--muted); font-size:0.85rem;">– 13:00 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
+        </div>
+        <div class="gig-item upcoming">
+          <div class="gig-date">04.12.2026</div>
+          <div class="gig-name">Upgrade JuGo – Chemnitz Lutherkirche <span style="color:var(--muted); font-size:0.85rem;">– 19:30 Uhr</span></div>
+          <div class="gig-badge">Demnächst</div>
         </div>
       </div>
     </div>
 
     <div class="termine-section">
       <div class="section-label">Vergangene Gigs</div>
-      <div class="gig-list" id="gigList">
-        <!-- rendered by JS -->
-      </div>
+      <div class="gig-list" id="gigList"><!-- rendered by JS --></div>
     </div>
 
   </div>
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/allmyexs_texas/" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank">YouTube</a>
@@ -848,12 +708,8 @@
         <div class="download-section">
           <h4>Downloads für Veranstalter</h4>
           <div class="download-links">
-            <a class="download-link" href="https://allmyexs.de/wp-content/uploads/2022/10/Technikrider2308.pdf" target="_blank">
-              ↓ Technik-Rider
-            </a>
-            <a class="download-link" href="https://allmyexs.de/wp-content/uploads/2022/10/Pressetext.pdf" target="_blank">
-              ↓ Pressetext
-            </a>
+            <a class="download-link" href="https://allmyexs.de/wp-content/uploads/2022/10/Technikrider2308.pdf" target="_blank">↓ Technik-Rider</a>
+            <a class="download-link" href="assets/Pressetext.pdf" target="_blank">↓ Pressetext</a>
           </div>
         </div>
 
@@ -868,7 +724,7 @@
     </div>
   </div>
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="#" onclick="showPage('datenschutz')">Datenschutz</a>
       <a href="#" onclick="showPage('impressum')">Impressum</a>
@@ -893,7 +749,7 @@
     <p style="margin-top:2rem;"><a href="#" onclick="showPage('home')" style="color:var(--red); text-decoration:none; font-size:0.85rem;">← Zurück zur Startseite</a></p>
   </div>
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="#" onclick="showPage('impressum')">Impressum</a>
     </div>
@@ -916,7 +772,7 @@
     <p style="margin-top:2rem;"><a href="#" onclick="showPage('home')" style="color:var(--red); text-decoration:none; font-size:0.85rem;">← Zurück zur Startseite</a></p>
   </div>
   <footer>
-    <span>info@allmyexs.de · © 2024</span>
+    <span>info@allmyexs.de · © 2026</span>
     <div class="footer-links">
       <a href="#" onclick="showPage('datenschutz')">Datenschutz</a>
     </div>
@@ -925,6 +781,7 @@
 
 <script>
 const pastGigs = [
+  { date: '05.12.2025', name: 'Upgrade JuGo Lutherkirche Chemnitz – 19:30 Uhr' },
   { date: '31.10.2025', name: 'Bikerabschluss Forest Village Ranch Daubitz' },
   { date: '19.10.2025', name: 'Tag des Handwerks: Köhler Kunsthandwerk Eppendorf' },
   { date: '20.09.2025', name: 'Hoffest Schmorkau' },
@@ -937,8 +794,8 @@ const pastGigs = [
   { date: '09.05.2024', name: 'Himmelfahrt in Schmorkau' },
   { date: '06.01.2024', name: 'Private Feier' },
   { date: '15.10.2023', name: 'Tag des Handwerks: Köhler Kunsthandwerk Eppendorf' },
-  { date: '15.09.2023', name: 'Hoffest in Schmorkau' },
   { date: '03.10.2023', name: 'Country am Teich Geyer' },
+  { date: '15.09.2023', name: 'Hoffest in Schmorkau' },
   { date: '31.08.2023', name: 'Dorffest Grosshartmannsdorf' },
   { date: '30.06.2023', name: 'VR Bank Sommerfest Drechselranch' },
   { date: '19.05.2023', name: 'Private Feier' },
@@ -973,23 +830,13 @@ function renderGigs() {
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('page-' + id);
-  if (el) {
-    el.classList.add('active');
-    window.scrollTo(0, 0);
-  }
+  if (el) { el.classList.add('active'); window.scrollTo(0, 0); }
   if (id === 'termine') renderGigs();
 }
 
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('navLinks').classList.remove('open');
-}
-
-function formSubmit() {
-  document.getElementById('formSuccess').style.display = 'block';
-}
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
+function formSubmit() { document.getElementById('formSuccess').style.display = 'block'; }
 </script>
 </body>
 </html>
