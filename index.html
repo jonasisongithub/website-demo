@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All My Ex's Live In Texas – Coverband Erzgebirge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --red: #C8382A;
@@ -25,7 +25,7 @@
   body {
     background: var(--black);
     color: var(--white);
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
@@ -36,20 +36,20 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: var(--black);
     border-bottom: 1px solid #222;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center;
     padding: 0 3rem;
     height: 74px;
   }
   .nav-logo { display: flex; align-items: center; text-decoration: none; }
   .nav-logo img { height: 58px; width: auto; display: block; }
   .nav-logo-text {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bitter', serif;
     font-weight: 700; font-size: 1.55rem; letter-spacing: 0.06em;
     color: #ffffff; text-transform: uppercase; margin-left: 0.85rem;
   }
   .nav-logo-text em { font-style: normal; color: #ffffff; }
   .nav-logo span { color: #ffffff; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0 auto; }
   .nav-links a {
     color: var(--muted); text-decoration: none; font-size: 0.75rem;
     letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: color 0.2s;
@@ -57,6 +57,9 @@
   .nav-links a:hover { color: var(--white); }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); transition: all 0.3s; }
+  .nav-social { display: flex; align-items: center; gap: 0.75rem; margin-left: 1.5rem; }
+  .nav-social-link { color: var(--muted); transition: color 0.2s; display: flex; align-items: center; }
+  .nav-social-link:hover { color: var(--white); }
 
   /* TOP RED BAR */
   .top-bar { height: 3px; background: var(--red); position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
@@ -80,8 +83,8 @@
     background: var(--black3);
     background-image: url('assets/band_photo1.jpg');
     background-size: cover;
-    background-position: center 30%;
-    filter: brightness(0.38);
+    background-position: center center;
+    filter: brightness(0.55);
     transition: opacity 0.3s;
   }
   .hero-overlay {
@@ -102,7 +105,7 @@
     text-transform: uppercase; padding: 0.4rem 1rem; margin-bottom: 1.8rem;
   }
   .hero-genre-line {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bitter', serif;
     font-size: clamp(0.85rem, 1.5vw, 1rem);
     font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--red); margin-bottom: 0.8rem;
@@ -115,7 +118,7 @@
   }
   .hero-main-title span { display: block; }
   .hero-tagline-main {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bitter', serif;
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--light); margin-bottom: 0.5rem; opacity: 0.85;
@@ -147,7 +150,7 @@
   /* =============== INNER PAGES =============== */
   .page-hero {
     background: var(--black2); border-bottom: 1px solid #1e1e1e;
-    padding: 4rem 3rem 3rem;
+    padding: 2.5rem 3rem 2rem;
   }
   .page-tag {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
@@ -157,7 +160,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.95; letter-spacing: 0.02em;
   }
-  .page-content { padding: 3rem; }
+  .page-content { padding: 2rem 3rem; }
 
   /* ÜBER UNS */
   .about-intro {
@@ -182,7 +185,7 @@
   .member-photo img { width: 100%; height: 100%; object-fit: cover; }
   .member-info { padding: 1rem; }
   .member-name {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-family: 'Bitter', serif; font-weight: 700;
     font-size: 1rem; margin-bottom: 0.2rem;
   }
   .member-role { color: var(--muted); font-size: 0.8rem; }
@@ -193,7 +196,7 @@
     max-width: 760px; margin-bottom: 2.5rem;
   }
   .repertoire-section-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bitter', serif;
     font-weight: 700; font-size: 1.15rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--red);
     margin-bottom: 1rem; margin-top: 2.5rem; padding-bottom: 0.5rem;
@@ -210,7 +213,7 @@
     background: var(--black3);
   }
   .rep-title {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-family: 'Bitter', serif; font-weight: 700;
     font-size: 1.05rem; letter-spacing: 0.02em; flex: 1;
   }
   .rep-artist { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; }
@@ -222,7 +225,7 @@
   .video-card { background: var(--black3); border: 1px solid #222; overflow: hidden; transition: border-color 0.2s; }
   .video-card:hover { border-color: var(--red); }
   .video-info { padding: 1rem 1.2rem; }
-  .video-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
+  .video-title { font-family: 'Bitter', serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
   .video-meta { font-size: 0.8rem; color: var(--muted); }
 
   /* TERMINE */
@@ -241,7 +244,7 @@
   }
   .gig-item:hover { border-color: #333; }
   .gig-item.upcoming { border-left: 3px solid var(--red); background: rgba(200,56,42,0.06); }
-  .gig-date { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--red); letter-spacing: 0.03em; }
+  .gig-date { font-family: 'Bitter', serif; font-weight: 700; font-size: 0.95rem; color: var(--red); letter-spacing: 0.03em; }
   .gig-item.past .gig-date { color: var(--muted); }
   .gig-name { font-size: 0.95rem; }
   .gig-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.6rem; background: var(--red); color: white; white-space: nowrap; }
@@ -253,14 +256,14 @@
   .form-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
   .form-input, .form-textarea {
     background: var(--black3); border: 1px solid #333; color: var(--white);
-    padding: 0.75rem 1rem; font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+    padding: 0.75rem 1rem; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem;
     transition: border-color 0.2s; outline: none; width: 100%;
   }
   .form-input:focus, .form-textarea:focus { border-color: var(--red); }
   .form-textarea { min-height: 140px; resize: vertical; }
   .submit-btn {
     display: inline-block; background: var(--red); color: var(--white); border: none;
-    font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 700;
+    font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase; padding: 1rem 2rem;
     cursor: pointer; transition: background 0.2s; align-self: flex-start;
   }
@@ -279,7 +282,7 @@
   }
   .download-link:hover { border-color: var(--red); color: var(--white); }
 
-  .venue-row { display: flex; align-items: center; gap: 0.75rem; color: var(--light); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.03em; font-size: 1.1rem; }
+  .venue-row { display: flex; align-items: center; gap: 0.75rem; color: var(--light); font-family: 'Bitter', serif; font-weight: 600; letter-spacing: 0.03em; font-size: 1.1rem; }
   .venue-dot { width: 6px; height: 6px; background: var(--red); flex-shrink: 0; display: inline-block; }
 
   /* Mobile */
@@ -313,11 +316,19 @@
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="showPage('about'); closeMenu()">Über Uns</a></li>
-    <li><a href="#" onclick="showPage('songs'); closeMenu()">Songs</a></li>
+    <li><a href="#" onclick="showPage('songs'); closeMenu()">Unsere Songs</a></li>
     <li><a href="#" onclick="showPage('media'); closeMenu()">Media</a></li>
     <li><a href="#" onclick="showPage('termine'); closeMenu()">Termine</a></li>
     <li><a href="#" onclick="showPage('kontakt'); closeMenu()">Kontakt</a></li>
   </ul>
+  <div class="nav-social">
+    <a href="https://www.instagram.com/allmyexs_texas/" target="_blank" aria-label="Instagram" class="nav-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.youtube.com/channel/UCGYyT1FYqbdo4fJT28UAAFg" target="_blank" aria-label="YouTube" class="nav-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menü">
     <span></span><span></span><span></span>
   </button>
@@ -336,8 +347,8 @@
         <span>CLASSICS.</span>
       </h1>
       <p class="hero-tagline-main">Legendäre Songs. Back on stage.</p>
-      <p class="hero-artists">ZZ Top &nbsp;·&nbsp; CCR &nbsp;·&nbsp; Johnny Cash &nbsp;·&nbsp; Elvis Presley</p>
-      <a class="hero-btn" href="#" onclick="showPage('kontakt')">Jetzt Buchen</a>
+      <p class="hero-artists">ZZ Top &nbsp;·&nbsp; CCR &nbsp;·&nbsp; Johnny Cash &nbsp;·&nbsp; Elvis</p>
+      <a class="hero-btn" href="#" onclick="showPage('kontakt')">Jetzt Anfragen</a>
     </div>
   </section>
   <footer>
@@ -393,10 +404,10 @@
       </div>
       <div class="member-card">
         <div class="member-photo">
-          <img src="https://allmyexs.de/wp-content/uploads/2023/05/Smutje-768x768.jpg" alt="DR. Gravedigger" onerror="this.parentElement.textContent='🎸'">
+          <img src="https://allmyexs.de/wp-content/uploads/2023/05/Smutje-768x768.jpg" alt="Dr. Gravedigger" onerror="this.parentElement.textContent='🎸'">
         </div>
         <div class="member-info">
-          <div class="member-name">"DR. Gravedigger"</div>
+          <div class="member-name">"Dr. Gravedigger"</div>
           <div class="member-role">Gitarre</div>
         </div>
       </div>
@@ -428,14 +439,12 @@
     <!-- FÜR WEN WIR SPIELEN -->
     <div style="margin-top:0; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
       <div>
-        <div class="section-label">Für wen wir spielen</div>
-        <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.95rem;">Wir fühlen uns zuhause auf:</p>
+        <div class="section-label">Wir fühlen uns zuhause auf</div>
         <div style="display:flex; flex-direction:column; gap:0.65rem;">
           <div class="venue-row"><span class="venue-dot"></span>Stadtfesten &amp; Dorffesten</div>
           <div class="venue-row"><span class="venue-dot"></span>Clubbühnen &amp; Live-Locations</div>
           <div class="venue-row"><span class="venue-dot"></span>Firmenfeiern &amp; Events</div>
           <div class="venue-row"><span class="venue-dot"></span>Open-Air-Veranstaltungen</div>
-          <div class="venue-row" style="margin-top:0.5rem; font-style:italic; color:var(--muted); font-size:0.9rem; padding-left:1.3rem;">Überall dort, wo Live-Musik im Mittelpunkt steht.</div>
         </div>
         <a class="hero-btn" href="#" onclick="showPage('kontakt')" style="margin-top:2rem; display:inline-block;">Jetzt anfragen</a>
       </div>
@@ -443,10 +452,10 @@
         <div style="text-align:center;">
           <div style="font-family:'Bebas Neue',sans-serif; font-size:4rem; color:var(--red); line-height:1; margin-bottom:0.5rem;">2018</div>
           <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Gegründet</div>
-          <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">&gt;100</div>
+          <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">50+</div>
           <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Gigs Erfahrung</div>
-          <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--white); line-height:1.3; margin-bottom:0.5rem;">Unvergessliche<br>Abende</div>
-          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Garantiert</div>
+          <div style="margin-top:2rem; font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--white); line-height:1; margin-bottom:0.5rem;">40+</div>
+          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted);">Songs im Repertoire</div>
         </div>
       </div>
     </div>
@@ -467,32 +476,28 @@
 <!-- ============ SONGS ============ -->
 <div class="page" id="page-songs">
   <div class="page-hero">
-    <span class="page-tag">Unser Repertoire</span>
     <h1 class="page-headline">Unsere Songs</h1>
   </div>
   <div class="page-content">
     <p class="songs-intro">Das hier ist eine Auswahl aus unserem Repertoire – ein Querschnitt durch Classic Rock, Country Rock und Rock'n'Roll, der zeigt, welche Klassiker euch bei unseren Konzerten begegnen. Unser Programm wächst ständig: Mit neuen Arrangements, Rock-Interpretationen bekannter Songs aus anderen Genres und dem einen oder anderen Überraschungsstück. Was ihr tatsächlich live hört, kann je nach Abend und Event variieren.</p>
 
-    <div class="repertoire-section-title">Unser Repertoire</div>
     <div class="repertoire-full-grid">
-      <div class="repertoire-row"><span class="rep-title">All My Ex's Live in Texas</span><span class="rep-artist">George Strait</span></div>
-      <div class="repertoire-row"><span class="rep-title">Aloha heja he</span><span class="rep-artist">Achim Reichel</span></div>
-      <div class="repertoire-row"><span class="rep-title">Another Brick in the Wall</span><span class="rep-artist">Pink Floyd</span></div>
-      <div class="repertoire-row"><span class="rep-title">Blue Suede Shoes</span><span class="rep-artist">Elvis Presley</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sharp Dressed Man</span><span class="rep-artist">ZZ Top</span></div>
+      <div class="repertoire-row"><span class="rep-title">Sweet Home Alabama</span><span class="rep-artist">Lynyrd Skynyrd</span></div>
+      <div class="repertoire-row"><span class="rep-title">Hold the Line</span><span class="rep-artist">Toto</span></div>
+      <div class="repertoire-row"><span class="rep-title">La Grange</span><span class="rep-artist">ZZ Top</span></div>
       <div class="repertoire-row"><span class="rep-title">Eye of the Tiger</span><span class="rep-artist">Survivor</span></div>
       <div class="repertoire-row"><span class="rep-title">Folsom Prison Blues</span><span class="rep-artist">Johnny Cash</span></div>
-      <div class="repertoire-row"><span class="rep-title">Hold the Line</span><span class="rep-artist">Toto</span></div>
-      <div class="repertoire-row"><span class="rep-title">I Love Rock'N Roll</span><span class="rep-artist">Joan Jett</span></div>
-      <div class="repertoire-row"><span class="rep-title">Jailhouse Rock</span><span class="rep-artist">Elvis Presley</span></div>
-      <div class="repertoire-row"><span class="rep-title">Knockin' On Heaven's Door</span><span class="rep-artist">Bob Dylan</span></div>
-      <div class="repertoire-row"><span class="rep-title">La Grange</span><span class="rep-artist">ZZ Top</span></div>
-      <div class="repertoire-row"><span class="rep-title">I Love a Rainy Night</span><span class="rep-artist">Eddie Rabbitt</span></div>
-      <div class="repertoire-row"><span class="rep-title">Ring of Fire</span><span class="rep-artist">Johnny Cash</span></div>
-      <div class="repertoire-row"><span class="rep-title">Rock me Amadeus</span><span class="rep-artist">Falco</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sharp Dressed Man</span><span class="rep-artist">ZZ Top</span></div>
       <div class="repertoire-row"><span class="rep-title">Summer of '69</span><span class="rep-artist">Bryan Adams</span></div>
-      <div class="repertoire-row"><span class="rep-title">Sweet Home Alabama</span><span class="rep-artist">Lynyrd Skynyrd</span></div>
-      <div class="repertoire-row"><span class="rep-title">Wonderwall</span><span class="rep-artist">Oasis</span></div>
+      <div class="repertoire-row"><span class="rep-title">I Love Rock'N Roll</span><span class="rep-artist">Joan Jett</span></div>
+      <div class="repertoire-row"><span class="rep-title">All My Ex's Live in Texas</span><span class="rep-artist">George Strait</span></div>
+      <div class="repertoire-row"><span class="rep-title">Another Brick in the Wall</span><span class="rep-artist">Pink Floyd</span></div>
+      <div class="repertoire-row"><span class="rep-title">Ring of Fire</span><span class="rep-artist">Johnny Cash</span></div>
+      <div class="repertoire-row"><span class="rep-title">Blue Suede Shoes</span><span class="rep-artist">Elvis Presley</span></div>
+      <div class="repertoire-row"><span class="rep-title">Rock me Amadeus</span><span class="rep-artist">Falco</span></div>
+      <div class="repertoire-row"><span class="rep-title">Jailhouse Rock</span><span class="rep-artist">Elvis Presley</span></div>
+      <div class="repertoire-row"><span class="rep-title">Aloha heja he</span><span class="rep-artist">Achim Reichel</span></div>
+      <div class="repertoire-row"><span class="rep-title">Knockin' On Heaven's Door</span><span class="rep-artist">Bob Dylan</span></div>
     </div>
 
     <div style="margin-top:3rem; padding:2rem; border:1px solid #222; background:var(--black3); max-width:760px;">
@@ -515,7 +520,6 @@
 <!-- ============ MEDIA ============ -->
 <div class="page" id="page-media">
   <div class="page-hero">
-    <span class="page-tag">Live & In Action</span>
     <h1 class="page-headline">Media</h1>
   </div>
   <div class="page-content">
@@ -589,7 +593,6 @@
 <!-- ============ TERMINE ============ -->
 <div class="page" id="page-termine">
   <div class="page-hero">
-    <span class="page-tag">Wann & Wo</span>
     <h1 class="page-headline">Termine</h1>
   </div>
   <div class="page-content">
@@ -600,32 +603,26 @@
         <div class="gig-item upcoming">
           <div class="gig-date">19.06.2026</div>
           <div class="gig-name">Familienfest Königsbruck <span style="color:var(--muted); font-size:0.85rem;">– 20:00 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
         </div>
         <div class="gig-item upcoming">
           <div class="gig-date">09.08.2026</div>
           <div class="gig-name">Missiocamp Strobelmühle <span style="color:var(--muted); font-size:0.85rem;">– 22:00 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
         </div>
         <div class="gig-item upcoming">
           <div class="gig-date">04.09.2026</div>
           <div class="gig-name">Heimatfest Schmorkau – Festplatz <span style="color:var(--muted); font-size:0.85rem;">– 21:00 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
         </div>
         <div class="gig-item upcoming">
           <div class="gig-date">11.09.2026</div>
           <div class="gig-name">Gartenverein Leipzig – Open Air <span style="color:var(--muted); font-size:0.85rem;">– 21:00 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
         </div>
         <div class="gig-item upcoming">
           <div class="gig-date">18.10.2026</div>
           <div class="gig-name">Tag des Handwerks Eppendorf <span style="color:var(--muted); font-size:0.85rem;">– 13:00 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
         </div>
         <div class="gig-item upcoming">
           <div class="gig-date">04.12.2026</div>
           <div class="gig-name">Upgrade JuGo – Chemnitz Lutherkirche <span style="color:var(--muted); font-size:0.85rem;">– 19:30 Uhr</span></div>
-          <div class="gig-badge">Demnächst</div>
         </div>
       </div>
     </div>
@@ -648,34 +645,32 @@
 <!-- ============ KONTAKT ============ -->
 <div class="page" id="page-kontakt">
   <div class="page-hero">
-    <span class="page-tag">Schreib uns</span>
     <h1 class="page-headline">Kontakt</h1>
   </div>
   <div class="page-content">
     <div class="kontakt-grid">
       <div>
         <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.95rem;">Nimm unkompliziert Kontakt zu uns auf. Hinterlasse auch gern eine Telefonnummer – wir melden uns schnellstmöglich.</p>
-        <form class="kontakt-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+        <form class="kontakt-form" id="contactForm" action="https://form.taxi/s/0beg9euo" method="POST">
+          <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_redirect" value="https://allmyexs.de">
           <div class="form-group">
             <label class="form-label">Dein Name</label>
-            <input class="form-input" type="text" id="fieldName" placeholder="Max Mustermann" required>
+            <input class="form-input" type="text" id="fieldName" name="name" placeholder="Max Mustermann" required>
           </div>
           <div class="form-group">
             <label class="form-label">E-Mail-Adresse</label>
-            <input class="form-input" type="email" id="fieldEmail" placeholder="max@beispiel.de" required>
+            <input class="form-input" type="email" id="fieldEmail" name="email" placeholder="max@beispiel.de" required>
           </div>
           <div class="form-group">
             <label class="form-label">Telefon (optional)</label>
-            <input class="form-input" type="tel" id="fieldTel" placeholder="+49 ...">
+            <input class="form-input" type="tel" id="fieldTel" name="telefon" placeholder="+49 ...">
           </div>
           <div class="form-group">
             <label class="form-label">Deine Nachricht</label>
-            <textarea class="form-textarea" id="fieldMessage" placeholder="Erzähl uns von deiner Veranstaltung..." required></textarea>
+            <textarea class="form-textarea" id="fieldMessage" name="message" placeholder="Erzähl uns von deiner Veranstaltung..." required></textarea>
           </div>
           <button class="submit-btn" type="submit">Nachricht senden</button>
-          <div id="formSuccess" style="display:none; color:#4caf87; font-size:0.85rem; padding:0.75rem; border:1px solid #4caf87; background:rgba(76,175,135,0.08);">
-            ✓ Dein E-Mail-Programm öffnet sich gleich mit deiner Nachricht. Bitte sende sie von dort ab.
-          </div>
         </form>
       </div>
 
@@ -687,17 +682,17 @@
         </div>
         <div class="info-item">
           <span class="info-icon">📍</span>
-          <span class="info-text">Erzgebirge / Raum Freiberg & Dresden</span>
+          <span class="info-text">Sachsen</span>
         </div>
         <div class="info-item">
           <span class="info-icon">♪</span>
-          <span class="info-text">Rock · Rock'n'Roll · Country<br>Hochzeiten · Stadtfeste · Firmenfeiern</span>
+          <span class="info-text">Rock · Rock'n'Roll · Country<br>Live-Events · Stadtfeste · Firmenfeiern</span>
         </div>
 
         <div class="download-section">
           <h4>Downloads für Veranstalter</h4>
           <div class="download-links">
-            <a class="download-link" href="assets/Technikrider.pdf" target="_blank">↓ Technik-Rider</a>
+            <a class="download-link" href="assets/technikrider.pdf" target="_blank">↓ Technik-Rider</a>
             <a class="download-link" href="assets/Pressetext.pdf" target="_blank">↓ Pressetext</a>
           </div>
         </div>
@@ -724,7 +719,6 @@
 <!-- ============ DATENSCHUTZ ============ -->
 <div class="page" id="page-datenschutz">
   <div class="page-hero">
-    <span class="page-tag">Rechtliches</span>
     <h1 class="page-headline">Datenschutz</h1>
   </div>
   <div class="page-content" style="max-width:760px;">
@@ -748,7 +742,6 @@
 <!-- ============ IMPRESSUM ============ -->
 <div class="page" id="page-impressum">
   <div class="page-hero">
-    <span class="page-tag">Rechtliches</span>
     <h1 class="page-headline">Impressum</h1>
   </div>
   <div class="page-content" style="max-width:760px;">
@@ -825,22 +818,7 @@ function showPage(id) {
 
 function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('fieldName').value;
-  const email = document.getElementById('fieldEmail').value;
-  const tel = document.getElementById('fieldTel').value;
-  const message = document.getElementById('fieldMessage').value;
-  const subject = encodeURIComponent('Anfrage von ' + name);
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'E-Mail: ' + email + '\n' +
-    (tel ? 'Telefon: ' + tel + '\n' : '') +
-    '\nNachricht:\n' + message
-  );
-  window.location.href = 'mailto:info@allmyexs.de?subject=' + subject + '&body=' + body;
-  document.getElementById('formSuccess').style.display = 'block';
-}
+// Kontaktformular wird nativ über form.taxi verarbeitet
 </script>
 </body>
 </html>
