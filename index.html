@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All My Ex's Live In Texas – Coverband Erzgebirge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --red: #C8382A;
@@ -43,7 +43,7 @@
   .nav-logo { display: flex; align-items: center; text-decoration: none; }
   .nav-logo img { height: 58px; width: auto; display: block; }
   .nav-logo-text {
-    font-family: 'Bitter', serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-weight: 700; font-size: 1.55rem; letter-spacing: 0.06em;
     color: #ffffff; text-transform: uppercase; margin-left: 0.85rem;
   }
@@ -75,7 +75,7 @@
     height: calc(100vh - 74px);
     min-height: 500px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
   }
@@ -95,18 +95,19 @@
   .hero-content {
     position: relative; z-index: 2;
     text-align: center;
-    padding: 2rem 1.5rem;
+    padding: clamp(3rem, 8vh, 7rem) 1.5rem 2rem;
     max-width: 900px;
+    width: 100%;
   }
   .hero-tag-top {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--red);
     color: var(--white);
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.18em;
     text-transform: uppercase; padding: 0.4rem 1rem; margin-bottom: 1.8rem;
   }
   .hero-genre-line {
-    font-family: 'Bitter', serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: clamp(0.85rem, 1.5vw, 1rem);
     font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--red); margin-bottom: 0.8rem;
@@ -119,7 +120,7 @@
   }
   .hero-main-title span { display: block; }
   .hero-tagline-main {
-    font-family: 'Bitter', serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--light); margin-bottom: 0.5rem; opacity: 0.85;
@@ -154,7 +155,7 @@
     padding: 2.5rem 3rem 2rem;
   }
   .page-tag {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.15em;
     text-transform: uppercase; color: var(--red); margin-bottom: 1rem; display: block;
   }
   .page-headline {
@@ -186,7 +187,7 @@
   .member-photo img { width: 100%; height: 100%; object-fit: cover; }
   .member-info { padding: 1rem; }
   .member-name {
-    font-family: 'Bitter', serif; font-weight: 700;
+    font-family: 'Source Sans 3', sans-serif; font-weight: 700;
     font-size: 1rem; margin-bottom: 0.2rem;
   }
   .member-role { color: var(--muted); font-size: 0.8rem; }
@@ -197,7 +198,7 @@
     max-width: 760px; margin-bottom: 2.5rem;
   }
   .repertoire-section-title {
-    font-family: 'Bitter', serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-weight: 700; font-size: 1.15rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--red);
     margin-bottom: 1rem; margin-top: 2.5rem; padding-bottom: 0.5rem;
@@ -214,7 +215,7 @@
     background: var(--black3);
   }
   .rep-title {
-    font-family: 'Bitter', serif; font-weight: 700;
+    font-family: 'Source Sans 3', sans-serif; font-weight: 700;
     font-size: 1.05rem; letter-spacing: 0.02em; flex: 1;
   }
   .rep-artist { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; }
@@ -226,13 +227,13 @@
   .video-card { background: var(--black3); border: 1px solid #222; overflow: hidden; transition: border-color 0.2s; }
   .video-card:hover { border-color: var(--red); }
   .video-info { padding: 1rem 1.2rem; }
-  .video-title { font-family: 'Bitter', serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
+  .video-title { font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
   .video-meta { font-size: 0.8rem; color: var(--muted); }
 
   /* TERMINE */
   .termine-section { margin-bottom: 3rem; }
   .section-label {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.15em;
     text-transform: uppercase; color: var(--red); margin-bottom: 1.5rem;
     display: flex; align-items: center; gap: 1rem;
   }
@@ -245,7 +246,7 @@
   }
   .gig-item:hover { border-color: #333; }
   .gig-item.upcoming { border-left: 3px solid var(--red); background: rgba(200,56,42,0.06); }
-  .gig-date { font-family: 'Bitter', serif; font-weight: 700; font-size: 0.95rem; color: var(--red); letter-spacing: 0.03em; }
+  .gig-date { font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--red); letter-spacing: 0.03em; }
   .gig-item.past .gig-date { color: var(--muted); }
   .gig-name { font-size: 0.95rem; }
   .gig-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.6rem; background: var(--red); color: white; white-space: nowrap; }
@@ -283,7 +284,7 @@
   }
   .download-link:hover { border-color: var(--red); color: var(--white); }
 
-  .venue-row { display: flex; align-items: center; gap: 0.75rem; color: var(--light); font-family: 'Bitter', serif; font-weight: 600; letter-spacing: 0.03em; font-size: 1.1rem; }
+  .venue-row { display: flex; align-items: center; gap: 0.75rem; color: var(--light); font-family: 'Source Sans 3', sans-serif; font-weight: 600; letter-spacing: 0.03em; font-size: 1.1rem; }
   .venue-dot { width: 6px; height: 6px; background: var(--red); flex-shrink: 0; display: inline-block; }
 
   /* Mobile */
@@ -701,7 +702,7 @@
         <div class="download-section">
           <h4>Downloads für Veranstalter</h4>
           <div class="download-links">
-            <a class="download-link" href="assets/technikrider.pdf" target="_blank">↓ Technik-Rider</a>
+            <a class="download-link" href="assets/Technikrider.pdf" target="_blank">↓ Technik-Rider</a>
             <a class="download-link" href="assets/Pressetext.pdf" target="_blank">↓ Pressetext</a>
           </div>
         </div>
