@@ -655,9 +655,8 @@
     <div class="kontakt-grid">
       <div>
         <p style="color:var(--muted); margin-bottom:1.5rem; font-size:0.95rem;">Nimm unkompliziert Kontakt zu uns auf. Hinterlasse auch gern eine Telefonnummer – wir melden uns schnellstmöglich.</p>
-        <form class="kontakt-form" id="contactForm" action="https://form.taxi/s/0beg9euo" method="POST">
+        <form class="kontakt-form" id="contactForm" action="https://form.taxi/s/0beg9euo" method="POST" onsubmit="handleFormSubmit(event)">
           <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="_redirect" value="https://allmyexs.de">
           <div class="form-group">
             <label class="form-label">Dein Name</label>
             <input class="form-input" type="text" id="fieldName" name="name" placeholder="Max Mustermann" required>
@@ -674,7 +673,13 @@
             <label class="form-label">Deine Nachricht</label>
             <textarea class="form-textarea" id="fieldMessage" name="message" placeholder="Erzähl uns von deiner Veranstaltung..." required></textarea>
           </div>
-          <button class="submit-btn" type="submit">Nachricht senden</button>
+          <button class="submit-btn" type="submit" id="submitBtn">Nachricht senden</button>
+          <div id="formSuccess" style="display:none; margin-top:1rem; padding:1rem 1.2rem; border-left:3px solid #4caf87; background:rgba(76,175,135,0.08); color:#4caf87; font-size:0.9rem;">
+            ✓ Danke! Deine Nachricht ist bei uns angekommen. Wir melden uns bald.
+          </div>
+          <div id="formError" style="display:none; margin-top:1rem; padding:1rem 1.2rem; border-left:3px solid var(--red); background:rgba(200,56,42,0.08); color:#e06050; font-size:0.9rem;">
+            Etwas ist schiefgelaufen. Schreib uns direkt an <a href="mailto:info@allmyexs.de" style="color:var(--red);">info@allmyexs.de</a>
+          </div>
         </form>
       </div>
 
@@ -696,7 +701,7 @@
         <div class="download-section">
           <h4>Downloads für Veranstalter</h4>
           <div class="download-links">
-            <a class="download-link" href="assets/Technikrider.pdf" target="_blank">↓ Technik-Rider</a>
+            <a class="download-link" href="assets/technikrider.pdf" target="_blank">↓ Technik-Rider</a>
             <a class="download-link" href="assets/Pressetext.pdf" target="_blank">↓ Pressetext</a>
           </div>
         </div>
@@ -767,7 +772,7 @@
 
 <script>
 const pastGigs = [
-  { date: '05.12.2025', name: 'Upgrade JuGo Lutherkirche Chemnitz' },
+  { date: '05.12.2025', name: 'Upgrade JuGo Lutherkirche Chemnitz – 19:30 Uhr' },
   { date: '31.10.2025', name: 'Bikerabschluss Forest Village Ranch Daubitz' },
   { date: '19.10.2025', name: 'Tag des Handwerks: Köhler Kunsthandwerk Eppendorf' },
   { date: '20.09.2025', name: 'Hoffest Schmorkau' },
@@ -822,7 +827,38 @@ function showPage(id) {
 
 function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
-// Kontaktformular wird nativ über form.taxi verarbeitet
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById('submitBtn');
+  const successEl = document.getElementById('formSuccess');
+  const errorEl = document.getElementById('formError');
+
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet…';
+  successEl.style.display = 'none';
+  errorEl.style.display = 'none';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      successEl.style.display = 'block';
+      form.reset();
+      btn.textContent = 'Nachricht senden';
+      btn.disabled = false;
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(err) {
+    errorEl.style.display = 'block';
+    btn.textContent = 'Nachricht senden';
+    btn.disabled = false;
+  }
+}
 </script>
 </body>
 </html>
