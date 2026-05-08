@@ -827,7 +827,7 @@ function showPage(id) {
 
 function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
-async function handleFormSubmit(e) {
+function handleFormSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = document.getElementById('submitBtn');
@@ -839,25 +839,30 @@ async function handleFormSubmit(e) {
   successEl.style.display = 'none';
   errorEl.style.display = 'none';
 
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', form.action, true);
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onload = function() {
+    btn.disabled = false;
+    btn.textContent = 'Nachricht senden';
+    try {
+      var response = JSON.parse(xhr.response);
+    } catch(e) {
+      var response = { success: false };
+    }
+    if (xhr.status === 200 && response.success === true) {
       successEl.style.display = 'block';
       form.reset();
-      btn.textContent = 'Nachricht senden';
-      btn.disabled = false;
     } else {
-      throw new Error('Server error');
+      errorEl.style.display = 'block';
     }
-  } catch(err) {
-    errorEl.style.display = 'block';
-    btn.textContent = 'Nachricht senden';
+  };
+  xhr.onerror = function() {
     btn.disabled = false;
-  }
+    btn.textContent = 'Nachricht senden';
+    errorEl.style.display = 'block';
+  };
+  xhr.send(new FormData(form));
 }
 </script>
 </body>
